@@ -54,6 +54,97 @@ This project is an online penetration testing web application designed to assist
 3. Open your web browser and navigate to http://localhost:8080.
 4. To open phpMyAdmin Web UI, navigate to http://localhost:8081.
 
+## Configuration
+
+### Web Server
+
+1. Ensure that your project directory contains the docker-compose.yml file, a Dockerfile (if you're building your own image), and the necessary directories (e.g., www for your web content).
+2. The service names (webserver, mysql-db, phpmyadmin) and container names (PHP-webServer) are customizable. Change these names if you prefer something more specific to your project.
+3. The webserver service builds an image from the current directory (.). If your Dockerfile is located elsewhere or has a different name, update the context and dockerfile fields accordingly.
+
+   ```
+   build:
+      context: ./path/to/dockerfile
+      dockerfile: CustomDockerfileName
+   ```
+
+4. The volumes mapping allows you to sync your local directory (./www) with the container’s web root (/var/www/html). If your web files are stored elsewhere, update the path accordingly.
+
+   ```
+   volumes:
+     - /path/to/your/web/files:/var/www/html
+   ```
+
+5. The ports mapping (8000:80) exposes the container’s port 80 to your local machine’s port 8000. Adjust these ports as necessary.
+
+   ```
+   ports:
+     - 8080:80
+   ```
+
+### MySQL Database
+
+1. The mysql-db service uses the mysql:8.0 image. You can change this to a different MySQL version if required.
+
+   ```
+   image: mysql:5.7
+   ```
+
+2. The environment variables (MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD, TZ) can be updated with your custom database credentials and timezone.
+
+   ```
+   environment:
+     MYSQL_ROOT_PASSWORD: your_root_password
+     MYSQL_DATABASE: your_database_name
+     MYSQL_USER: your_database_user
+     MYSQL_PASSWORD: your_database_password
+     TZ: Your/Timezone
+   ```
+
+3. The ports mapping (3306:3306) exposes MySQL’s port 3306 to your local machine. Adjust this if you need to avoid port conflicts.
+
+   ```
+   ports:
+     - "3307:3306"
+   ```
+
+4. The volumes mapping syncs your local directory with the MySQL data directory inside the container. Update this to your preferred location.
+
+   ```
+   volumes:
+     - /path/to/your/local/mysql/data:/var/lib/mysql
+   ```
+
+5. The phpmyadmin service uses the phpmyadmin/phpmyadmin image. The links directive connects it to the MySQL container.
+6. The PMA_HOST environment variable should match the name of your MySQL service (mysql-db by default).
+7. The MYSQL_ROOT_PASSWORD variable should match the root password used in the mysql-db service.
+
+   ```
+   environment:
+     PMA_HOST: mysql-db
+     MYSQL_ROOT_PASSWORD: your_root_password
+   ```
+
+8. The ports mapping (8081:80) exposes phpMyAdmin on your local machine. Adjust the local port as needed.
+
+   ```
+   ports:
+     - "8081:80"
+   ```
+
+9. After customizing the docker-compose.yml file, save your changes.
+10. Run the following command to start the services:
+
+      ```
+      docker-compose up -d
+      ```
+
+11. If you make changes to the docker-compose.yml file later, use:
+
+      ```
+      docker-compose down && docker-compose up -d
+      ```
+
 ## Usage
 
 - Access the application using admin1 for username and password.
