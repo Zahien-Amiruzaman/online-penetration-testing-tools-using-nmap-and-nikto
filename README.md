@@ -105,7 +105,7 @@ This project is an online penetration testing web application designed to assist
 
    ```
    ports:
-     - "3307:3306"
+     - "3306:3306"
    ```
 
 4. The volumes mapping syncs your local directory with the MySQL data directory inside the container. Update this to your preferred location.
