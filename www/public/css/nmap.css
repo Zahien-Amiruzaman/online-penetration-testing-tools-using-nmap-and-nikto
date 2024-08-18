@@ -1,0 +1,13 @@
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+#text-right {
+    text-align: right;
+}
+
+#refresh-btn {
+    background-color: #1f5297;
+    border-color: #1f5297;
+}

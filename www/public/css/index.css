@@ -1,0 +1,52 @@
+* {
+    font-family: Poppins;
+}
+
+.container-page {
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+}
+
+.login-container {
+    margin: 0 auto;
+    border-style: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-btn {
+    background-color: #121212;
+    color: white;
+    border: none;
+}

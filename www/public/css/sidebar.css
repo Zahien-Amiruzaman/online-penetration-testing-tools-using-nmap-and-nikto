@@ -1,0 +1,41 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    z-index: 1;
+    background-color: #121212;
+}
+
+#sidebar-brand {
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sidebar .nav-link {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #bfbfbf;
+    color: #121212;
+}
+
+.sidebar .nav-item .submenu {
+    padding-left: 20px;
+}
+
+.chevron-icon {
+    margin-left: auto;
+}
+
+.sidebar.nav-link i:last-child {
+    margin-left: auto;
+}

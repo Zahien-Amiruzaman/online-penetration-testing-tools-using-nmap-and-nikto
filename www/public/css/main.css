@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    /* font-family: Consolas; */
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+.main-content {
+    margin-left: 250px;
+}
+
+.container-page {
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+}
+
+.login-container {
+    margin: 0 auto;
+    border-style: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-btn {
+    background-color: #1f5297;
+    color: white;
+    border: none;
+}
+
+#login-btn:hover {
+    background-color: #2a2929;
+}
+
+#add-new-btn {
+    background-color: #1f5297;
+}
+
+#btn-tools {
+    background-color: #121212;
+    border-color: #121212;
+}
+
+.card {
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+}
+
+.target-hostname {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+}
